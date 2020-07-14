@@ -1,0 +1,350 @@
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <!--link rel="stylesheet" type="text/css" href="./resources/estilo.css"-->
+    <title>BINGO VIRTUAL SOLIDARIO</title>
+    <link rel="icon" type="image/png" href='https://es.seaicons.com/wp-content/uploads/2015/06/duck-icon.png' />
+    <script src="https://www.google.com/recaptcha/api.js"></script>
+</head>
+<script>
+    let palabra = "LEONARDO";
+    var state = new Array("Amigo",
+        "Abrir",
+        "Abaco",
+        "Arco",
+        "Abeja",
+        "Bajar",
+        "Barato",
+        "Bala",
+        "BaldIo",
+        "Bacalao",
+        "Casa",
+        "Camisa",
+        "CanciOn",
+        "Cereza",
+        "Cemento",
+        "Dedo",
+        "Diente",
+        "Demostrar",
+        "Dar",
+        "Decidir",
+        "Enemigo",
+        "Estudio",
+        "Echar",
+        "Ejercito",
+        "Eclipse",
+        "Fresa",
+        "FrIo",
+        "Falso",
+        "Fallar",
+        "FAbula",
+        "Gato",
+        "Grama",
+        "GElido",
+        "Gema",
+        "Ganar",
+        "Hacer",
+        "Hospital",
+        "Habichuela",
+        "Habitante",
+        "Hablar",
+        "Instituto",
+        "InstrucciOn",
+        "Intruso",
+        "ImAn",
+        "Icono",
+        "JamOn",
+        "Jaula",
+        "JabalI",
+        "Jadear",
+        "Juguete",
+        "Kilogramo",
+        "KilOmetro",
+        "Karaoke",
+        "Kiosko",
+        "Kimono",
+        "Libro",
+        "Libertar",
+        "LimOn",
+        "Llave",
+        "Labio",
+        "MamA",
+        "Mapa",
+        "Marciano",
+        "Mariposa",
+        "Mesa",
+        "Nota",
+        "NociOn",
+        "Nutrir",
+        "Nada",
+        "Nadar",
+        "Ñoqui",
+        "Ñus",
+        "Ñipe",
+        "Ñampi",
+        "Ñachi",
+        "Ojo",
+        "Obra",
+        "Orar",
+        "OcEano",
+        "Obtuso",
+        "Padre",
+        "Pan",
+        "PasiOn",
+        "Piso",
+        "PAgina",
+        "QuImica",
+        "Queso",
+        "Querer",
+        "Quintal",
+        "Quieto",
+        "Reina",
+        "Regar",
+        "Rima",
+        "Rico",
+        "Rama",
+        "Sol",
+        "Sal",
+        "Sabor",
+        "Sano",
+        "Saber",
+        "TimOn",
+        "Tala",
+        "Tamaño",
+        "Tambor",
+        "Tabla",
+        "Universidad",
+        "Unico",
+        "Unir",
+        "Ubicar",
+        "UltimO",
+        "Vacuna",
+        "Vaca",
+        "VacIo",
+        "Vaya",
+        "VAlido",
+        "Watts",
+        "WOlfram",
+        "Whisky",
+        "Waterpolo",
+        "Windsurf",
+        "XilOfono",
+        "Xilema",
+        "XerOfilo",
+        "XenOfobo",
+        "XenOn",
+        "Yate",
+        "Yerno",
+        "Yerba",
+        "Yema",
+        "Yeso",
+        "Zorro",
+        "Zafiro",
+        "Zarpa",
+        "Zancudo",
+        "Zanahoria");
+    palabra = state[Math.floor(state.length * Math.random())].toUpperCase().trim();
+</script>
+<script src="https://code.jquery.com/jquery-1.11.1.js"></script>
+<body>
+    <div>
+        El Bingo no comenzo, lo invitamos a jugar a la mezcla del ahorcado y el buscaminas<br>
+        <div id="div-center">
+            <table border="1" cellpadding="1" cellspacing="1" width="270" heigth="270" text-align="center">
+                <caption>BuscaPalabra
+                    <script>document.write(numCarton)</script>
+                </caption>
+                <tr height="0,1">
+                    <td id="td0" width="0,1" heigth="0,1" value="0"></td>
+                    <td id="td1" width="0,1" heigth="0,1" value="0"></td>
+                    <td id="td2" width="0,1" heigth="0,1" value="0"></td>
+                    <td id="td3" width="0,1" heigth="0,1" value="0"></td>
+                    <td id="td4" width="0,1" heigth="0,1" value="0"></td>
+                    <td id="td5" width="0,1" heigth="0,1" value="0"></td>
+                    <td id="td6" width="0,1" heigth="0,1" value="0"></td>
+                    <td id="td7" width="0,1" heigth="0,1" value="0"></td>
+                </tr>
+                <tr height="45">
+                    <td id="td8" width="0,1" heigth="0,1" value="0"></td>
+                    <td id="td9" width="45" value="A">A</td>
+                    <td id="td10" width="45" value="8">8</td>
+                    <td id="td11" width="45" value="Z">Z</td>
+                    <td id="td12" width="45" value="B">B</td>
+                    <td id="td13" width="45" value="G">G</td>
+                    <td id="td14" width="45" value="1">1</td>
+                    <td id="td15" width="0,1" value="0"></td>
+                </tr>
+                <tr height="45">
+                    <td id="td16" width="0,1" heigth="0,1" value="0"></td>
+                    <td id="td17" width="45" value="Q">Q</td>
+                    <td id="td18" width="45" value="R">R</td>
+                    <td id="td19" width="45" value="9">9</td>
+                    <td id="td20" width="45" value="C">C</td>
+                    <td id="td21" width="45" value="S">S</td>
+                    <td id="td22" width="45" value="J">J</td>
+                    <td id="td23" width="0,1" value="0"></td>
+
+                </tr>
+                <tr height="45">
+                    <td id="td24" width="0,1" heigth="0,1" value="0"></td>
+                    <td id="td25" width="45" value="3">3</td>
+                    <td id="td26" width="45" value="D">D</td>
+                    <td id="td27" width="45" value="K">K</td>
+                    <td id="td28" width="45" value="P">P</td>
+                    <td id="td29" width="45" value="7">7</td>
+                    <td id="td30" width="45" value="O">O/0</td>
+                    <td id="td31" width="0,1" value="0"></td>
+
+                </tr>
+                <tr height="45">
+                    <td id="td32" width="0,1" heigth="0,1" value="0"></td>
+                    <td id="td33" width="45" value="I">I</td>
+                    <td id="td34" width="45" value="M">M</td>
+                    <td id="td35" width="45" value="W">W</td>
+                    <td id="td36" width="45" value="6">6</td>
+                    <td id="td37" width="45" value="Y">Y</td>
+                    <td id="td38" width="45" value="T">T</td>
+                    <td id="td39" width="0,1" value="0"></td>
+
+                </tr>
+                <tr height="45">
+                    <td id="td40" width="0,1" heigth="0,1" value="0"></td>
+                    <td id="td41" width="45" value="2">2</td>
+                    <td id="td42" width="45" value="U">U</td>
+                    <td id="td43" width="45" value="H">H</td>
+                    <td id="td44" width="45" value="L">L</td>
+                    <td id="td45" width="45" value="4">4</td>
+                    <td id="td46" width="45" value="N">N</td>
+                    <td id="td47" width="0,1" value="0"></td>
+
+                </tr>
+                <tr height="45">
+                    <td id="td48" width="0,1" value="0"></td>
+                    <td id="td49" width="45" value="F">F</td>
+                    <td id="td50" width="45" value="V">V</td>
+                    <td id="td51" width="45" value="5">5</td>
+                    <td id="td52" width="45" value="Ñ">Ñ</td>
+                    <td id="td53" width="45" value="E">E</td>
+                    <td id="td54" width="45" value="X">X</td>
+                    <td id="td55" width="0,1" value="0"></td>
+
+                </tr>
+                <tr height="0,1">
+                    <td id="td56" width="0,1" heigth="0,1" value="0"></td>
+                    <td id="td57" width="0,1" heigth="0,1" value="0"></td>
+                    <td id="td58" width="0,1" heigth="0,1" value="0"></td>
+                    <td id="td59" width="0,1" heigth="0,1" value="0"></td>
+                    <td id="td45" width="0,1" heigth="0,1" value="0"></td>
+                    <td id="td61" width="0,1" heigth="0,1" value="0"></td>
+                    <td id="td62" width="0,1" heigth="0,1" value="0"></td>
+                    <td id="td63" width="0,1" heigth="0,1" value="0"></td>
+
+                </tr>
+            </table>
+            <br>
+
+        </div>
+        <form method="post" action="./bingo">
+            <P>Carton numero: <input type="number" name="numCarton" id="numCarton">
+            <P>Evento: <input type="text" name="evento" id="evento">
+            <br><button type="submit" class="btn btn-default" width="150px">Ingresar al Bingo<img
+                    src="./resources/bolillero.gif" alt="bolillero gif" height="30px" width="30px"></button>
+            <div style="float: right;" class="g-recaptcha" data-sitekey="6Ld9Zb4UAAAAAMVi5a8fAlHIZIHtWFssIQ1bRsvs">         
+            </div>
+        </form>
+</div>
+    <br>
+    <a target="_blank" href="./resources/listaCartones.html">Listado de Cartones</a>
+</body>
+<script>
+    for (x = 9; x < 55 && x > 8; x++) {
+        if ($("#td" + x).attr("value") == palabra[0]) {
+            $("#td" + x).css("background", "orange");
+            $("#td" + x).text($("#td" + x).attr("value").concat('[' + calcularAlrededor(x) + ']'));
+        }
+    }
+    var adivinar = false;
+    var palabraIndice = 0;
+    $(function () {
+        $("td").click(function (e) {
+
+            e.preventDefault();
+            var data = $(this).attr("id").substring(2, 4);
+            //alert(data);
+            if ($(this).attr("value") == palabra[palabraIndice] && adivinar == false) {
+                adivinar = true;
+
+
+            }
+            if (adivinar == true) {
+                if ($(this).attr("value") == palabra[palabraIndice]) {
+                    $(this).css("background", "green");
+                    $(this).text($(this).attr("value").concat('[' + calcularAlrededor(data) + ']'))
+
+                    if (palabraIndice == palabra.length - 1) {
+                        alert("ganaste");
+                        location.reload(true)
+                    }
+                    palabraIndice++;
+
+                }
+                else {
+                    alert("perdiste");
+                    location.reload(true)
+                }
+
+            }
+            if ($(this).attr("value") != "0" && adivinar == false) {
+                $(this).css("background", "red");
+                if (palabra.includes($(this).attr("value"))) {
+                    alert("perdiste");
+                    location.reload(true)
+
+                }
+
+                $(this).text($(this).attr("value").concat('[' + calcularAlrededor(data) + ']'))
+                //alert("alrededor hay: " + contador);
+            }
+
+        });
+    });
+
+    function calcularAlrededor(data) {
+        contador = 0;
+        if (palabra.includes($("#td" + (parseInt(data) + 1)).attr("value"))) {
+            contador++;
+        }
+        if (palabra.includes($("#td" + (parseInt(data) - 1)).attr("value"))) {
+            contador++;
+        }
+        if (palabra.includes($("#td" + (parseInt(data) - 8)).attr("value"))) {
+            contador++;
+        }
+        if (palabra.includes($("#td" + (parseInt(data) + 8)).attr("value"))) {
+            contador++;
+        }
+        if (palabra.includes($("#td" + (parseInt(data) - 7)).attr("value"))) {
+            contador++;
+        }
+        if (palabra.includes($("#td" + (parseInt(data) + 7)).attr("value"))) {
+            contador++;
+        }
+        if (palabra.includes($("#td" + (parseInt(data) - 9)).attr("value"))) {
+            contador++;
+        }
+        if (palabra.includes($("#td" + (parseInt(data) + 9)).attr("value"))) {
+            contador++;
+        }
+        return contador;
+    };
+
+
+</script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+</html>
+
+
+</head>
+
+<body>

@@ -1,0 +1,17 @@
+- Descomnprimir en carpeta bingo-ong
+- acceder
+- npm i
+- git init
+- heroku login
+- heroku create bingo-ong
+- git add .
+- git commit -m "primer commit"
+- git push heroku master
+
+Acceder desde la web
+git remote show origin # copy down the heroku URL
+git remote rm origin
+git remote add origin [github URL]
+git remote add heroku [heroku URL]
+
+git remote add heroku  https://git.heroku.com/bingo-ong.git
